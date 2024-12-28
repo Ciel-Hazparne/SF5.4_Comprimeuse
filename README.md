@@ -49,7 +49,7 @@ Il suffira de connecter l’automate au même réseau que le PC de supervision p
 
 ## 3. IHM distante
 
-L’IHM distante sera une **application web** permettant d’afficher les mêmes informations que l’IHM locale, mais avec des fonctionnalités supplémentaires :  
+L’IHM distante sera une **application web** réalisée à l'aide du **framework Symfony 5.4** permettant d’afficher les mêmes informations que l’IHM locale, mais avec des fonctionnalités supplémentaires :  
 - Gestion des utilisateurs.  
 - Histogrammes de production.  
-- Alarmes *(optionnel)*.  
+- Alarmes.  
