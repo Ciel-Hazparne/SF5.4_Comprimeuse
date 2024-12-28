@@ -1,5 +1,5 @@
-# Présentation générale du système supportant le projet
-**Projet de Mattéo Cotis (IHM Web) et de Nicolas Jaureguiberry (IHM Locale)**
+# Projet Comprimeuse RAVOUX 2024 suivi de production par IHM locale et distante
+**Projet de Mattéo Cotis (IHM Web Symfony 5.4) et de Nicolas Jaureguiberry (IHM Locale logiciel KScada/VB.NET)**
 
 La société **Eiffage** a été missionnée pour la remise à niveau de la machine « Comprimeuse » dans le cadre de la réforme du bac professionnel MSPC.  
 Le but de ce rétrofit était d’apporter les modifications suivantes :  
