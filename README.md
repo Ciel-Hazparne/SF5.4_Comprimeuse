@@ -1,5 +1,5 @@
 # Présentation générale du système supportant le projet
-**Projet de Mattéo Cotis (IHM Web) et de Nicolas Jaurreguiberry (IHM Locale)**
+**Projet de Mattéo Cotis (IHM Web) et de Nicolas Jaureguiberry (IHM Locale)**
 
 La société **Eiffage** a été missionnée pour la remise à niveau de la machine « Comprimeuse » dans le cadre de la réforme du bac professionnel MSPC.  
 Le but de ce rétrofit était d’apporter les modifications suivantes :  
