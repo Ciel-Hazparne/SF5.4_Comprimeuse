@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Production{% endblock %}
+
+{% block body %}
+<h1>Nouvelle production</h1>
+{{ form_start(form) }}
+<div class="row">
+  <div class="row align-items-end">
+    <div class="col-md-2 mt-4">{{ form_row(form.numOf) }}</div>
+    <div class="col-md-5">{{ form_row(form.horoDebut) }}</div>
+    <div class="col-md-5">{{ form_row(form.horoFin) }}</div>
+    <div class="col-md-6 mt-4">{{ form_label(form.typeProd) }}
+      {{ form_widget(form.typeProd, {'attr': {'class': 'form-control'}}) }}
+      {{ form_errors(form.typeProd) }}</div>
+    <div class="col-md-6">{{ form_row(form.operateur) }}</div>
+    <div class="col-md-3 mt-4">{{ form_row(form.cptFlacon) }}</div>
+    <div class="col-md-3">{{ form_row(form.cptBouchon) }}</div>
+    <div class="col-md-3">{{ form_row(form.cptPriseRobot) }}</div>
+    <div class="col-md-3">{{ form_row(form.cptDeposeRobot) }}</div>
+    <div class="col-md-3">
+      <button type="submit" class="btn btn-primary mt-4">Enregistrer</button>
+    </div>
+    {{ form_end(form) }}
+  </div>
+</div>
+  {% endblock %}

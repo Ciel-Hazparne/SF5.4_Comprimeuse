@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Production{% endblock %}
+
+{% block body %}
+  <h1>Production</h1>
+  {{ form_start(form) }}
+  <div class="row">
+    <div class="row align-items-end">
+      <div class="col-md-1"> {{ form_row(form.numOf) }} </div>
+      <div class="col-md-2"> {{ form_row(form.startDate) }} </div>
+      <div class="col-md-2"> {{ form_row(form.endDate) }} </div>
+      <div class="col-md-2"> {{ form_row(form.type) }} </div>
+      <div class="col-md-2"> {{ form_row(form.operator) }} </div>
+      <div class="col">
+        <div class="form-group mt-2">
+          <button type="submit" class="btn btn-success">Rechercher</button>
+          <a href="{{ path('prod_index') }}" class="btn btn-secondary">Réinitialiser</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ form_end(form) }}
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <small></small>
+      <th>Id</th>
+      <th>N° OF</th>
+      <th>Début Production</th>
+      <th>Fin Production</th>
+      <th>Type Production</th>
+      <th>Opérateur</th>
+      <th><small>Nb Flacon</small></th>
+      <th><small>Nb Bouchon</small></th>
+      <th><small>Nb Prise Robot</small></th>
+      <th><small>Nb Dépose Robot</small></th>
+      <th>Actions</th>
+      </small>
+    </tr>
+    </thead>
+    <tbody>
+    {% for production in productions %}
+      <tr>
+        <td>{{ production.Id }}</td>
+        <td>{{ production.Num_OF }}</td>
+        <td>{{ production.Horo_Debut|date('d/m/Y H:i:s') }}</td>
+        <td>{{ production.Horo_Fin|date('d/m/Y H:i:s') }}</td>
+        <td>{{ production.Type_Prod }}</td>
+        <td>{{ production.Operateur }}</td>
+        <td>{{ production.Cpt_Flacon }}</td>
+        <td>{{ production.Cpt_Bouchon }}</td>
+        <td>{{ production.Cpt_Prise_Robot }}</td>
+        <td>{{ production.Cpt_Depose_Robot }}</td>
+        <td>
+          <form method="post" action="{{ path('prod_delete', {'id': production.Id}) }}"
+                style="display: inline-block" onsubmit="return confirm('Etes-vous sûr de supprimer le numéro d\'OF {{ production.Num_OF }} ?')">
+            <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+          </form>
+          <a href="{{ path('prod_edit', {'id': production.Id}) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <a href="{{ path('prod_new') }}" class="btn btn-info mb-3">Créer un nouvel OF</a>
+  <a href="{{ path('prod_export_excel') }}" class="btn btn-primary mb-3">Exporter au format Excel</a>
+  <div class="pagination">
+    {{ knp_pagination_render(productions) }}
+  </div>
+{% endblock %}
